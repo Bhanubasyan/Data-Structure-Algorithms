@@ -1,8 +1,11 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class KadaneAlgo {
 
   private int maxSum(int[] arr) {
-    int maxSum = -Integer.MAX_VALUE;
+    int maxSum = -Integer.MIN_VALUE;
     int currentSum = 0;
 
     for (int i = 0; i < arr.length; i++) {
@@ -21,9 +24,20 @@ public class KadaneAlgo {
 
   public static void main(String[] args) {
     int[] arr = { 1, -2, 3, 4, 5, 6, -7, 8, 9, 4, 5, 6, 7, 8, 4, -5, 6, -7, 8 };
+
     KadaneAlgo maxSum = new KadaneAlgo();
 
-    System.out.println(maxSum.maxSum(arr));
+    int result = maxSum.maxSum(arr);
+
+    try {
+      FileWriter write = new FileWriter("outputFile.txt");
+
+      write.write("maximum suarrays sum is : " + result);
+
+      write.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
 
   }
 }
