@@ -18,7 +18,7 @@ class InsertionSort {
   }
 
   public static void main(String[] args) {
-    int[] arr = { 2, 5, 3, 8, 6, 7, 1, 9 };
+    int[] arr = { 2, 5, 3, 8, 6, 7, 1, 9, 34, 65, 89 };
     sort(arr);
 
     try {
